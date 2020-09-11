@@ -33,6 +33,20 @@ ball.color("white")
 ball.penup() #to not draw line
 ball.goto(0, 0)
 
+# functions
+def paddle_A_up():
+    y = paddle_A.ycor()
+    y += 20
+    paddle_A.sety(y)
+def paddle_A_down():
+    y = paddle_A.ycor()
+    y -= 20
+    paddle_A.sety(y)
+
+# Keyboard binding
+window.listen()
+window.onkeypress(paddle_A_up, "w")
+window.onkeypress(paddle_A_down, "s")
 
 # Main game loop
 while True:
