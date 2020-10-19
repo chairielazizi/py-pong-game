@@ -43,10 +43,21 @@ def paddle_A_down():
     y -= 20
     paddle_A.sety(y)
 
+def paddle_B_up():
+    y = paddle_B.ycor()
+    y += 20
+    paddle_B.sety(y)
+def paddle_B_down():
+    y = paddle_B.ycor()
+    y -= 20
+    paddle_B.sety(y)
+
 # Keyboard binding
 window.listen()
 window.onkeypress(paddle_A_up, "w")
 window.onkeypress(paddle_A_down, "s")
+window.onkeypress(paddle_B_up, "Up")
+window.onkeypress(paddle_B_down, "Down")
 
 # Main game loop
 while True:
