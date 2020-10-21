@@ -34,8 +34,8 @@ ball.penup() #to not draw line
 ball.goto(0, 0)
 
 #move the ball
-ball.dx = 0.1
-ball.dy = 0.1
+ball.dx = 0.3
+ball.dy = -0.3
 
 # functions
 def paddle_A_up():
@@ -70,3 +70,12 @@ while True:
     #move the ball
     ball.setx(ball.xcor() + ball.dx)
     ball.sety(ball.ycor() + ball.dy)
+
+    #border checking
+    if ball.ycor() > 290:
+        ball.sety(290)
+        ball.dy *= -1
+
+    if ball.ycor() < -290:
+        ball.sety(-290)
+        ball.dy *= -1
