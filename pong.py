@@ -46,6 +46,10 @@ pen.hideturtle()
 pen.goto(0,260)
 pen.write("Player A: 0 Player B: 0",align="center",font=("Courier",24,"normal"))
 
+#score
+scoreA = 0
+scoreB = 0
+
 # functions
 def paddle_A_up():
     y = paddle_A.ycor()
@@ -92,10 +96,17 @@ while True:
     if ball.xcor() > 390:
         ball.goto(0,0)
         ball.dx *= -1
+        scoreA += 1
+        pen.clear() # to clear the pen
+        pen.write("Player A: {} Player B: {}".format(scoreA,scoreB),align="center",font=("Courier",24,"normal"))
+
 
     if ball.xcor() <-390:
         ball.goto(0,0)
         ball.dx *= -1
+        scoreB += 1
+        pen.clear()
+        pen.write("Player A: {} Player B: {}".format(scoreA,scoreB),align="center",font=("Courier",24,"normal"))
 
     # paddle and ball collsions
     #paddle B
